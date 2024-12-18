@@ -123,13 +123,16 @@ Wireshark üzerinde HTTP isteklerine göre filtreleme yaptığımda 25828 numara
 
 10- Saldırgan hangi uygulamanın zaafiyetli sürümünü kullanarak hedef makinaya erişim sağlamıştır?
 
-Cevap: Analiz edebildiğim kadarıyla Apache 2.4.62 source code disclosure tahmin ediyorum. (CVE-2024-40725)
+Cevap: Analiz edebildiğim kadarıyla Tomcat 5.5 information disclosure tahmin ediyorum. (CVE-2010-1157)
 
 ### Analiz
 
 Wireshark üzerinde HTTP olarak filtreleme yapınca bir 25828 numaralı paketteki API isteğine not found olarak cevap verdiğini gördüm, banner üzerinde versiyon bilgisi verebileceğini tahmin ettiğim için isteğe içeriğe girince sunucuda Apache 2.4.62 kullanıldığını gördüm.
-Not Found olarak dönen cevaplara baktığımda bannerda Tomcat 5.5 olarak verildiğini gördüm. Apache 2.4.62 olarak zaafiyet araştırması yaptığımda Source Code Disclosure zaafiyetinin olabileceğini fark ettim.
+Not Found olarak dönen cevaplara baktığımda bannerda Tomcat 5.5 olarak verildiğini gördüm. Tomcat 5.5.x olarak zaafiyet araştırması yaptığımda Information Disclosure zaafiyetinin olabileceğini fark ettim çünkü ilk yaptığım analizimde 2 request'in önce başarısız olup sonrasında basic auth ile tekrar denendiğinde başarılı olduğunu görmüştüm.
 
 ![](./images/zaafiyet-1.png)
 
 ![](./images/zaafiyet-2.png)
+
+[CVE](https://nvd.nist.gov/vuln/detail/cve-2010-1157)
+[ExploitDB](https://www.exploit-db.com/exploits/12343)
