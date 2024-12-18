@@ -134,5 +134,5 @@ Not Found olarak dönen cevaplara baktığımda bannerda Tomcat 5.5 olarak veril
 
 ![](./images/zaafiyet-2.png)
 
-[CVE](https://nvd.nist.gov/vuln/detail/cve-2010-1157)
-[ExploitDB](https://www.exploit-db.com/exploits/12343)
+- [CVE](https://nvd.nist.gov/vuln/detail/cve-2010-1157)
+- [ExploitDB](https://www.exploit-db.com/exploits/12343)
